@@ -1,5 +1,5 @@
 ---
-name: "spec"
+name: "espec"
 description: "Interview-driven specification writer. Save specs to ~/specs/<name>.md"
 ---
 
