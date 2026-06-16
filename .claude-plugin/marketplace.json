@@ -1,0 +1,33 @@
+{
+  "name": "sikavial-skills",
+  "owner": {
+    "name": "Sikavial"
+  },
+  "description": "Spec-driven development skills for Claude Code",
+  "plugins": [
+    {
+      "name": "spec",
+      "source": "./spec",
+      "description": "Interview-driven specification writer",
+      "version": "0.1.0"
+    },
+    {
+      "name": "build",
+      "source": "./build",
+      "description": "Build exactly as specified",
+      "version": "0.1.0"
+    },
+    {
+      "name": "review",
+      "source": "./review",
+      "description": "Verify 100% spec compliance",
+      "version": "0.1.0"
+    },
+    {
+      "name": "iterate",
+      "source": "./iterate",
+      "description": "Automated build-review-correct loop",
+      "version": "0.1.0"
+    }
+  ]
+}
