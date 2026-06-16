@@ -6,8 +6,8 @@
   "description": "Spec-driven development skills for Claude Code",
   "plugins": [
     {
-      "name": "spec",
-      "source": "./spec",
+      "name": "espec",
+      "source": "./espec",
       "description": "Interview-driven specification writer",
       "version": "0.1.0"
     },
