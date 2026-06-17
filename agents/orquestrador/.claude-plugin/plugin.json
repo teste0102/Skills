@@ -1,0 +1,1 @@
+{"name":"orquestrador","version":"0.1.0","description":"Ponto de entrada único do sistema. Recebe comandos e delega para os agentes corretos.","author":{"name":"Sikavial"}}

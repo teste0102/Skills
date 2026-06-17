@@ -3,7 +3,7 @@
   "owner": {
     "name": "Sikavial"
   },
-  "description": "Spec-driven development skills for Claude Code",
+  "description": "Spec-driven development skills and agents for Claude Code",
   "plugins": [
     {
       "name": "espec",
@@ -27,6 +27,46 @@
       "name": "iterate",
       "source": "./iterate",
       "description": "Automated build-review-correct loop",
+      "version": "0.1.0"
+    },
+    {
+      "name": "orquestrador",
+      "source": "./agents/orquestrador",
+      "description": "Ponto de entrada único — roteia comandos para os agentes corretos",
+      "version": "0.1.0",
+      "type": "agent"
+    },
+    {
+      "name": "explorador",
+      "source": "./agents/explorador",
+      "description": "Analisa o projeto atual e recomenda as skills mais relevantes",
+      "version": "0.1.0",
+      "type": "agent"
+    },
+    {
+      "name": "criador",
+      "source": "./agents/criador",
+      "description": "Gera automaticamente novas skills com estrutura completa",
+      "version": "0.1.0",
+      "type": "agent"
+    },
+    {
+      "name": "curador",
+      "source": "./agents/curador",
+      "description": "Revisa a árvore de skills e mantém marketplace.json sincronizado",
+      "version": "0.1.0",
+      "type": "agent"
+    },
+    {
+      "name": "buscador",
+      "source": "./buscador",
+      "description": "Busca informações específicas na internet e retorna resumo estruturado com fontes.",
+      "version": "0.1.0"
+    },
+    {
+      "name": "buscar-ml",
+      "source": "./buscar-ml",
+      "description": "Busca produtos no Mercado Livre via API pública e retorna lista ordenada por menor preço.",
       "version": "0.1.0"
     }
   ]
