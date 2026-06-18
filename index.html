@@ -11,150 +11,119 @@
       box-sizing: border-box;
     }
 
-    :root {
-      --primary: #5c5ce6;
-      --primary-dark: #3434a3;
-      --bg: #f8f9fa;
-      --surface: #ffffff;
-      --text: #1a1a2e;
-      --text-muted: #6b7280;
-      --accent: #5c5ce6;
-      --border: #e5e7eb;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      line-height: 1.6;
+      background: #f3f4f6;
+      color: #1f2937;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
     }
 
     .container {
-      max-width: 1400px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
     }
 
     /* HEADER */
     header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .header-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
-      color: var(--accent);
-      text-decoration: none;
+      color: #5c5ce6;
     }
 
-    .header-right {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .repo-link {
-      padding: 8px 16px;
-      background: var(--accent);
+    .github-btn {
+      background: #5c5ce6;
       color: white;
-      border-radius: 6px;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
 
-    .repo-link:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
+    .github-btn:hover {
+      background: #3434a3;
     }
 
     /* HERO */
     .hero {
-      padding: 100px 0;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 12px;
       text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .hero h1 {
-      font-size: 56px;
-      font-weight: 800;
+      font-size: 48px;
       margin-bottom: 16px;
-      color: var(--text);
-      letter-spacing: -1.5px;
+      color: #1f2937;
     }
 
     .hero p {
-      font-size: 20px;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 48px;
-      line-height: 1.8;
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 40px;
     }
 
-    .hero-stats {
+    .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      max-width: 600px;
-      margin: 60px auto;
+      gap: 20px;
+      margin-top: 40px;
     }
 
     .stat {
-      text-align: center;
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 8px;
     }
 
     .stat-number {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 8px;
+      color: #5c5ce6;
     }
 
     .stat-label {
+      color: #6b7280;
       font-size: 14px;
-      color: var(--text-muted);
-      font-weight: 500;
+      margin-top: 8px;
     }
 
-    /* INSTALL SECTION */
+    /* INSTALL BOX */
     .install-box {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--primary-dark) 100%);
-      border-radius: 12px;
-      padding: 60px 40px;
-      text-align: center;
-      max-width: 800px;
-      margin: 80px auto;
+      background: #5c5ce6;
       color: white;
-      box-shadow: 0 20px 60px rgba(92, 92, 230, 0.15);
+      padding: 50px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     .install-box h2 {
       font-size: 32px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .install-box p {
       font-size: 16px;
-      margin-bottom: 32px;
-      opacity: 0.95;
+      margin-bottom: 30px;
+      opacity: 0.9;
     }
 
-    .install-buttons {
+    .install-btns {
       display: flex;
       gap: 16px;
       justify-content: center;
@@ -163,20 +132,19 @@
 
     .install-btn {
       background: white;
-      color: var(--accent);
+      color: #5c5ce6;
       border: none;
-      padding: 14px 32px;
+      padding: 14px 30px;
       border-radius: 8px;
-      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
 
     .install-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     /* FILTERS */
@@ -184,153 +152,139 @@
       display: flex;
       gap: 12px;
       justify-content: center;
-      margin: 60px 0 40px;
+      margin-bottom: 40px;
     }
 
     .filter-btn {
+      background: white;
+      border: 2px solid #e5e7eb;
       padding: 10px 20px;
-      border: 2px solid var(--border);
-      background: transparent;
-      color: var(--text);
       border-radius: 8px;
       cursor: pointer;
-      font-weight: 500;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      transition: all 0.3s;
     }
 
-    .filter-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
+    .filter-btn:hover,
     .filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
+      background: #5c5ce6;
       color: white;
+      border-color: #5c5ce6;
     }
 
-    /* SKILLS GRID */
+    /* GRID */
     .section-title {
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
-      margin-top: 80px;
-      margin-bottom: 40px;
-      color: var(--text);
+      margin-top: 40px;
+      margin-bottom: 24px;
+      color: #1f2937;
     }
 
-    .skills-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-      margin-bottom: 60px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
-    .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
       border-radius: 10px;
-      padding: 28px;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
+      padding: 24px;
+      transition: all 0.3s;
     }
 
-    .skill-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 12px 40px rgba(92, 92, 230, 0.08);
-      transform: translateY(-4px);
+    .card:hover {
+      border-color: #5c5ce6;
+      box-shadow: 0 4px 12px rgba(92, 92, 230, 0.1);
+      transform: translateY(-2px);
     }
 
-    .skill-type {
+    .card-type {
       display: inline-block;
-      width: fit-content;
-      padding: 5px 12px;
-      background: rgba(92, 92, 230, 0.1);
+      background: #e0e7ff;
+      color: #5c5ce6;
+      padding: 6px 12px;
       border-radius: 6px;
       font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 12px;
       font-weight: 600;
+      margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
 
-    .skill-type.agent {
+    .card-type.agent {
+      background: #fee2e2;
       color: #dc2626;
-      background: rgba(220, 38, 38, 0.1);
     }
 
-    .skill-name {
-      font-size: 18px;
+    .card-name {
+      font-size: 20px;
       font-weight: 700;
       margin-bottom: 8px;
-      color: var(--text);
+      color: #1f2937;
     }
 
-    .skill-desc {
-      color: var(--text-muted);
+    .card-desc {
+      color: #6b7280;
       font-size: 14px;
       margin-bottom: 16px;
-      flex-grow: 1;
       line-height: 1.6;
     }
 
-    .skill-command {
+    .card-cmd {
       background: #f3f4f6;
-      border: 1px solid var(--border);
-      border-radius: 6px;
+      border: 1px solid #e5e7eb;
       padding: 10px 12px;
-      font-family: 'Monaco', 'Courier New', monospace;
+      border-radius: 6px;
+      font-family: monospace;
       font-size: 12px;
-      color: var(--text);
+      color: #1f2937;
       margin-bottom: 12px;
-      word-break: break-all;
       cursor: pointer;
-      transition: all 0.2s ease;
+      word-break: break-all;
       user-select: all;
     }
 
-    .skill-command:hover {
-      background: var(--accent);
+    .card-cmd:hover {
+      background: #5c5ce6;
       color: white;
-      border-color: var(--accent);
     }
 
-    .skill-actions {
+    .card-actions {
       display: flex;
       gap: 8px;
     }
 
     .btn {
       flex: 1;
-      padding: 10px 12px;
+      padding: 10px;
       border: none;
       border-radius: 6px;
       font-size: 13px;
-      cursor: pointer;
-      transition: all 0.3s ease;
       font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
     }
 
     .btn-copy {
-      background: var(--accent);
+      background: #5c5ce6;
       color: white;
     }
 
     .btn-copy:hover {
-      background: var(--primary-dark);
+      background: #3434a3;
     }
 
-    .btn-github {
+    .btn-code {
       background: #f3f4f6;
-      color: var(--text);
-      border: 1px solid var(--border);
+      color: #1f2937;
+      border: 1px solid #e5e7eb;
     }
 
-    .btn-github:hover {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
+    .btn-code:hover {
+      background: #e5e7eb;
     }
 
     .loading {
@@ -342,23 +296,14 @@
       display: inline-block;
       width: 40px;
       height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
+      border: 4px solid #e5e7eb;
+      border-top-color: #5c5ce6;
       border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+      animation: spin 1s linear infinite;
     }
 
     @keyframes spin {
       to { transform: rotate(360deg); }
-    }
-
-    .error {
-      background: rgba(220, 38, 38, 0.05);
-      border: 1px solid #fecaca;
-      color: #dc2626;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
     }
 
     .toast {
@@ -371,254 +316,175 @@
       border-radius: 8px;
       font-weight: 600;
       z-index: 1000;
-      animation: slideUp 0.3s ease;
     }
 
-    @keyframes slideUp {
-      from {
-        transform: translateY(100px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* FOOTER */
     footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 60px 0;
-      margin-top: 100px;
       text-align: center;
-      color: var(--text-muted);
+      color: #6b7280;
+      padding: 40px;
       font-size: 14px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .install-buttons {
-        flex-direction: column;
-      }
-
-      .install-btn {
-        width: 100%;
-      }
-
-      .install-box {
-        padding: 40px 24px;
-      }
-
-      .install-box h2 {
-        font-size: 24px;
-      }
+      .hero { padding: 40px 20px; }
+      .hero h1 { font-size: 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .install-btns { flex-direction: column; }
+      header { flex-direction: column; gap: 20px; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <a href="#" class="logo">⚡ sikavial-skills</a>
-        <div class="header-right">
-          <a href="https://github.com/teste0102/Skills" class="repo-link">📦 GitHub</a>
+  <div class="container">
+    <header>
+      <div class="logo">⚡ sikavial-skills</div>
+      <a href="https://github.com/teste0102/Skills" class="github-btn">📦 GitHub</a>
+    </header>
+
+    <section class="hero">
+      <h1>Claude Code Skills</h1>
+      <p>Spec-driven development com 10 skills e 4 agentes</p>
+      
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number" id="skill-count">6</div>
+          <div class="stat-label">Skills</div>
         </div>
+        <div class="stat">
+          <div class="stat-number" id="agent-count">4</div>
+          <div class="stat-label">Agentes</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" id="total-count">10</div>
+          <div class="stat-label">Total</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="install-box">
+      <h2>⚡ Instalar Tudo em Segundos</h2>
+      <p>Escolha sua plataforma e execute o script</p>
+      <div class="install-btns">
+        <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.sh" download="install.sh" class="install-btn">🐧 Linux / Mac</a>
+        <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.ps1" download="install.ps1" class="install-btn">🪟 Windows</a>
+      </div>
+    </section>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="skill">Skills</button>
+      <button class="filter-btn" data-filter="agent">Agentes</button>
+    </div>
+
+    <div id="content">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Carregando...</p>
       </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Claude Code Skills</h1>
-        <p>Spec-driven development skills and agents para criar tudo que você precisa</p>
-        
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-number" id="skill-count">6</div>
-            <div class="stat-label">Skills</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" id="agent-count">4</div>
-            <div class="stat-label">Agentes</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" id="total-count">10</div>
-            <div class="stat-label">Total</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="install-box">
-          <h2>⚡ Instalação em 1 Clique</h2>
-          <p>Baixe o script para sua plataforma e execute no terminal</p>
-          <div class="install-buttons">
-            <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.sh" download="install.sh" class="install-btn">
-              🐧 Linux / Mac
-            </a>
-            <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.ps1" download="install.ps1" class="install-btn">
-              🪟 Windows
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="skill">Skills</button>
-          <button class="filter-btn" data-filter="agent">Agentes</button>
-        </div>
-
-        <div id="content">
-          <div class="loading">
-            <div class="spinner"></div>
-            <p>Carregando marketplace...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <footer>
-    <div class="container">
-      <p>© 2026 Sikavial • Desenvolvido com Claude Code</p>
-    </div>
+    <p>© 2026 Sikavial • Claude Code Skills Marketplace</p>
   </footer>
 
   <script>
-    const GITHUB_RAW = 'https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json';
-
-    let allPlugins = [];
-    let currentFilter = 'all';
+    const URL = 'https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json';
+    let plugins = [];
+    let filter = 'all';
 
     document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.onclick = (e) => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.filter;
-        renderPlugins();
-      });
+        e.target.classList.add('active');
+        filter = e.target.dataset.filter;
+        render();
+      };
     });
 
-    async function loadMarketplace() {
+    async function load() {
       try {
-        const response = await fetch(GITHUB_RAW);
-        if (!response.ok) throw new Error('Marketplace não disponível');
-        const data = await response.json();
-        allPlugins = data.plugins || [];
+        const res = await fetch(URL);
+        const data = await res.json();
+        plugins = data.plugins || [];
         updateStats();
-        renderPlugins();
-      } catch (error) {
-        document.getElementById('content').innerHTML = `
-          <div class="error">❌ Erro ao carregar marketplace</div>
-        `;
+        render();
+      } catch (e) {
+        document.getElementById('content').innerHTML = '<p style="color:red;text-align:center;padding:40px">❌ Erro ao carregar</p>';
       }
     }
 
     function updateStats() {
-      const skills = allPlugins.filter(p => !p.type || p.type !== 'agent');
-      const agents = allPlugins.filter(p => p.type === 'agent');
+      const skills = plugins.filter(p => !p.type || p.type !== 'agent');
+      const agents = plugins.filter(p => p.type === 'agent');
       document.getElementById('skill-count').textContent = skills.length;
       document.getElementById('agent-count').textContent = agents.length;
-      document.getElementById('total-count').textContent = allPlugins.length;
+      document.getElementById('total-count').textContent = plugins.length;
     }
 
-    function renderPlugins() {
-      let filtered = allPlugins;
-      if (currentFilter === 'skill') filtered = allPlugins.filter(p => !p.type || p.type !== 'agent');
-      else if (currentFilter === 'agent') filtered = allPlugins.filter(p => p.type === 'agent');
+    function render() {
+      let list = plugins;
+      if (filter === 'skill') list = plugins.filter(p => !p.type || p.type !== 'agent');
+      else if (filter === 'agent') list = plugins.filter(p => p.type === 'agent');
 
       let html = '';
-      if (currentFilter === 'all') {
-        const skills = filtered.filter(p => !p.type || p.type !== 'agent');
-        const agents = filtered.filter(p => p.type === 'agent');
-        if (skills.length > 0) {
-          html += '<h2 class="section-title">Skills</h2><div class="skills-grid">';
-          skills.forEach(p => html += renderCard(p));
+      if (filter === 'all') {
+        const skills = plugins.filter(p => !p.type || p.type !== 'agent');
+        const agents = plugins.filter(p => p.type === 'agent');
+        if (skills.length) {
+          html += '<h2 class="section-title">Skills</h2><div class="grid">';
+          skills.forEach(p => html += card(p));
           html += '</div>';
         }
-        if (agents.length > 0) {
-          html += '<h2 class="section-title">Agentes</h2><div class="skills-grid">';
-          agents.forEach(p => html += renderCard(p));
+        if (agents.length) {
+          html += '<h2 class="section-title">Agentes</h2><div class="grid">';
+          agents.forEach(p => html += card(p));
           html += '</div>';
         }
       } else {
-        html = '<div class="skills-grid">';
-        filtered.forEach(p => html += renderCard(p));
+        html = '<div class="grid">';
+        list.forEach(p => html += card(p));
         html += '</div>';
       }
       document.getElementById('content').innerHTML = html;
-      attachEvents();
+      attach();
     }
 
-    function renderCard(p) {
+    function card(p) {
       const cmd = `/plugin install ${p.name}@sikavial-skills`;
       const type = p.type === 'agent' ? 'agent' : '';
       const label = p.type === 'agent' ? 'Agente' : 'Skill';
       return `
-        <div class="skill-card">
-          <span class="skill-type ${type}">${label}</span>
-          <h3 class="skill-name">/${p.name}</h3>
-          <p class="skill-desc">${p.description}</p>
-          <div class="skill-command" data-cmd="${cmd}">${cmd}</div>
-          <div class="skill-actions">
-            <button class="btn btn-copy" data-cmd="${cmd}">Copiar</button>
-            <button class="btn btn-github" data-link="${p.source}">Código</button>
+        <div class="card">
+          <div class="card-type ${type}">${label}</div>
+          <div class="card-name">/${p.name}</div>
+          <div class="card-desc">${p.description}</div>
+          <div class="card-cmd" onclick="copy(this)">${cmd}</div>
+          <div class="card-actions">
+            <button class="btn btn-copy" onclick="copy(this)">Copiar</button>
+            <button class="btn btn-code" onclick="window.open('https://github.com/teste0102/Skills/tree/main/${p.source}')">Código</button>
           </div>
         </div>
       `;
     }
 
-    function attachEvents() {
-      document.querySelectorAll('.btn-copy').forEach(b => {
-        b.onclick = (e) => {
-          navigator.clipboard.writeText(e.target.dataset.cmd);
-          showToast('✅ Copiado!');
-        };
-      });
-      document.querySelectorAll('.skill-command').forEach(el => {
-        el.onclick = () => {
-          navigator.clipboard.writeText(el.dataset.cmd);
-          showToast('✅ Copiado!');
-        };
-      });
-      document.querySelectorAll('.btn-github').forEach(b => {
-        b.onclick = (e) => window.open(`https://github.com/teste0102/Skills/tree/main/${e.target.dataset.link}`, '_blank');
-      });
+    function attach() {
+      // Scripts já estão no card()
     }
 
-    function showToast(msg) {
-      const el = document.createElement('div');
-      el.className = 'toast';
-      el.textContent = msg;
-      document.body.appendChild(el);
-      setTimeout(() => el.remove(), 2500);
+    function copy(el) {
+      const cmd = el.closest('.card').querySelector('.card-cmd').textContent;
+      navigator.clipboard.writeText(cmd);
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = '✅ Copiado!';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
     }
 
-    loadMarketplace();
+    window.copy = copy;
+    load();
   </script>
 </body>
 </html>
