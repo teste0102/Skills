@@ -3,54 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>sikavial-skills</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { background: #e5e7eb !important; height: 100%; width: 100%; }
-    body { color: #1f2937; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 15px; }
+    html { background: #e5e7eb !important; }
+    body { background: #e5e7eb !important; color: #1f2937; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 15px; min-height: 100vh; }
     .container { max-width: 1200px; margin: 0 auto; }
-    header { background: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    header { background: white; padding: 15px 20px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; }
     .logo { font-size: 20px; font-weight: 700; color: #5c5ce6; }
-    .github-btn { background: #5c5ce6; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; border: none; cursor: pointer; }
+    .github-btn { background: #5c5ce6; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
     .github-btn:hover { background: #3434a3; }
-    .hero { background: white; padding: 25px; border-radius: 8px; text-align: center; margin-bottom: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .hero { background: white; padding: 25px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
     .hero h1 { font-size: 32px; margin-bottom: 8px; }
     .hero p { font-size: 14px; color: #6b7280; margin-bottom: 15px; }
     .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
-    .stat { background: #f9fafb; padding: 12px; border-radius: 6px; text-align: center; }
+    .stat { background: #f9fafb; padding: 12px; border-radius: 6px; }
     .stat-number { font-size: 24px; font-weight: 700; color: #5c5ce6; }
     .stat-label { color: #6b7280; font-size: 12px; margin-top: 4px; }
     .install-box { background: #5c5ce6; color: white; padding: 25px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
     .install-box h2 { font-size: 20px; margin-bottom: 8px; }
-    .install-box p { font-size: 13px; margin-bottom: 15px; opacity: 0.9; }
     .install-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-    .install-btn { background: white; color: #5c5ce6; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.2s; }
-    .install-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .install-btn { background: white; color: #5c5ce6; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .install-btn:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     .filters { display: flex; gap: 8px; justify-content: center; margin-bottom: 15px; }
-    .filter-btn { background: white; border: 1px solid #d1d5db; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; transition: all 0.2s; }
-    .filter-btn:hover, .filter-btn.active { background: #5c5ce6; color: white; border-color: #5c5ce6; }
-    .section-title { font-size: 16px; font-weight: 700; margin-top: 15px; margin-bottom: 12px; color: #1f2937; }
+    .filter-btn { background: white; border: 1px solid #d1d5db; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 13px; }
+    .filter-btn.active { background: #5c5ce6; color: white; border-color: #5c5ce6; }
+    .section-title { font-size: 16px; font-weight: 700; margin-top: 15px; margin-bottom: 12px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 15px; }
-    .card { background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; transition: all 0.2s; }
-    .card:hover { border-color: #5c5ce6; box-shadow: 0 4px 12px rgba(92, 92, 230, 0.1); transform: translateY(-2px); }
+    .card { background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; }
+    .card:hover { border-color: #5c5ce6; box-shadow: 0 4px 12px rgba(92, 92, 230, 0.1); }
     .card-type { display: inline-block; background: #e0e7ff; color: #5c5ce6; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
     .card-type.agent { background: #fee2e2; color: #dc2626; }
-    .card-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #1f2937; }
-    .card-desc { color: #6b7280; font-size: 12px; margin-bottom: 10px; line-height: 1.5; }
-    .card-cmd { background: #f3f4f6; border: 1px solid #d1d5db; padding: 8px 10px; border-radius: 4px; font-family: monospace; font-size: 11px; color: #1f2937; margin-bottom: 10px; cursor: pointer; word-break: break-all; user-select: all; }
+    .card-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .card-desc { color: #6b7280; font-size: 12px; margin-bottom: 10px; }
+    .card-cmd { background: #f3f4f6; border: 1px solid #d1d5db; padding: 8px 10px; border-radius: 4px; font-family: monospace; font-size: 11px; margin-bottom: 10px; cursor: pointer; user-select: all; }
     .card-cmd:hover { background: #5c5ce6; color: white; }
     .card-actions { display: flex; gap: 6px; }
-    .btn { flex: 1; padding: 8px; border: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn { flex: 1; padding: 8px; border: none; border-radius: 4px; font-size: 12px; font-weight: 600; cursor: pointer; }
     .btn-copy { background: #5c5ce6; color: white; }
     .btn-copy:hover { background: #3434a3; }
     .btn-code { background: #f3f4f6; color: #1f2937; border: 1px solid #d1d5db; }
-    .btn-code:hover { background: #e5e7eb; }
-    .loading { text-align: center; padding: 30px 20px; }
-    .spinner { display: inline-block; width: 30px; height: 30px; border: 3px solid #d1d5db; border-top-color: #5c5ce6; border-radius: 50%; animation: spin 1s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .toast { position: fixed; bottom: 20px; right: 20px; background: #10b981; color: white; padding: 10px 16px; border-radius: 6px; font-weight: 600; font-size: 13px; z-index: 1000; }
-    footer { text-align: center; color: #6b7280; padding: 20px; font-size: 12px; margin-top: 15px; }
-    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .stats { grid-template-columns: 1fr; } .install-btns { flex-direction: column; } header { flex-direction: column; gap: 10px; text-align: center; } }
+    .toast { position: fixed; bottom: 20px; right: 20px; background: #10b981; color: white; padding: 10px 16px; border-radius: 6px; font-weight: 600; z-index: 1000; }
+    footer { text-align: center; color: #6b7280; padding: 20px; font-size: 12px; }
   </style>
 </head>
 <body>
@@ -64,124 +61,78 @@
       <h1>Claude Code Skills</h1>
       <p>Spec-driven development com 10 skills e 4 agentes</p>
       <div class="stats">
-        <div class="stat">
-          <div class="stat-number" id="skill-count">6</div>
-          <div class="stat-label">Skills</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" id="agent-count">4</div>
-          <div class="stat-label">Agentes</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number" id="total-count">10</div>
-          <div class="stat-label">Total</div>
-        </div>
+        <div class="stat"><div class="stat-number">6</div><div class="stat-label">Skills</div></div>
+        <div class="stat"><div class="stat-number">4</div><div class="stat-label">Agentes</div></div>
+        <div class="stat"><div class="stat-number">10</div><div class="stat-label">Total</div></div>
       </div>
     </section>
 
     <section class="install-box">
       <h2>⚡ Instalar em Segundos</h2>
-      <p>Escolha sua plataforma</p>
       <div class="install-btns">
-        <button class="install-btn" onclick="downloadScript('linux')">🐧 Linux / Mac</button>
-        <button class="install-btn" onclick="downloadScript('windows')">🪟 Windows</button>
+        <button class="install-btn" onclick="download('linux')">🐧 Linux / Mac</button>
+        <button class="install-btn" onclick="download('windows')">🪟 Windows</button>
       </div>
     </section>
 
     <div class="filters">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="skill">Skills</button>
-      <button class="filter-btn" data-filter="agent">Agentes</button>
+      <button class="filter-btn active" onclick="filterIt(this, 'all')">Todos</button>
+      <button class="filter-btn" onclick="filterIt(this, 'skill')">Skills</button>
+      <button class="filter-btn" onclick="filterIt(this, 'agent')">Agentes</button>
     </div>
 
-    <div id="content">
-      <div class="loading">
-        <div class="spinner"></div>
-        <p>Carregando...</p>
-      </div>
-    </div>
+    <div id="content">Carregando...</div>
   </div>
 
-  <footer>
-    <p>© 2026 Sikavial • Claude Code Skills</p>
-  </footer>
+  <footer><p>© 2026 Sikavial • Claude Code Skills</p></footer>
 
   <script>
-    const URL = 'https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json';
     let plugins = [];
-    let filter = 'all';
 
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.onclick = (e) => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        filter = e.target.dataset.filter;
-        render();
-      };
-    });
+    async function download(type) {
+      const file = type === 'linux' ? 'install.sh' : 'install.ps1';
+      const url = `https://raw.githubusercontent.com/teste0102/Skills/main/${file}`;
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = file;
+      link.click();
+      showToast('✅ Download iniciado!');
+    }
 
-    async function downloadScript(type) {
-      const filename = type === 'linux' ? 'install.sh' : 'install.ps1';
-      const url = `https://raw.githubusercontent.com/teste0102/Skills/main/${filename}`;
-      
-      try {
-        const response = await fetch(url);
-        const blob = await response.blob();
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        showToast('✅ Download iniciado!');
-      } catch (e) {
-        showToast('❌ Erro no download');
-      }
+    function filterIt(btn, type) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render(type);
     }
 
     async function load() {
       try {
-        const res = await fetch(URL);
+        const res = await fetch('https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json?t=' + Date.now());
         const data = await res.json();
         plugins = data.plugins || [];
-        updateStats();
-        render();
+        render('all');
       } catch (e) {
-        document.getElementById('content').innerHTML = '<p style="color:red;text-align:center;padding:20px">❌ Erro ao carregar</p>';
+        document.getElementById('content').innerHTML = '❌ Erro ao carregar';
       }
     }
 
-    function updateStats() {
-      const skills = plugins.filter(p => !p.type || p.type !== 'agent');
-      const agents = plugins.filter(p => p.type === 'agent');
-      document.getElementById('skill-count').textContent = skills.length;
-      document.getElementById('agent-count').textContent = agents.length;
-      document.getElementById('total-count').textContent = plugins.length;
-    }
-
-    function render() {
+    function render(type) {
       let list = plugins;
-      if (filter === 'skill') list = plugins.filter(p => !p.type || p.type !== 'agent');
-      else if (filter === 'agent') list = plugins.filter(p => p.type === 'agent');
+      if (type === 'skill') list = plugins.filter(p => !p.type || p.type !== 'agent');
+      if (type === 'agent') list = plugins.filter(p => p.type === 'agent');
 
       let html = '';
-      if (filter === 'all') {
+      if (type === 'all') {
         const skills = plugins.filter(p => !p.type || p.type !== 'agent');
         const agents = plugins.filter(p => p.type === 'agent');
         if (skills.length) {
-          html += '<h2 class="section-title">Skills</h2><div class="grid">';
-          skills.forEach(p => html += card(p));
-          html += '</div>';
+          html += '<h2 class="section-title">Skills</h2><div class="grid">' + skills.map(card).join('') + '</div>';
         }
         if (agents.length) {
-          html += '<h2 class="section-title">Agentes</h2><div class="grid">';
-          agents.forEach(p => html += card(p));
-          html += '</div>';
+          html += '<h2 class="section-title">Agentes</h2><div class="grid">' + agents.map(card).join('') + '</div>';
         }
       } else {
-        html = '<div class="grid">';
-        list.forEach(p => html += card(p));
-        html += '</div>';
+        html = '<div class="grid">' + list.map(card).join('') + '</div>';
       }
       document.getElementById('content').innerHTML = html;
     }
@@ -195,17 +146,17 @@
           <div class="card-type ${type}">${label}</div>
           <div class="card-name">/${p.name}</div>
           <div class="card-desc">${p.description}</div>
-          <div class="card-cmd" onclick="copy(this)">${cmd}</div>
+          <div class="card-cmd" onclick="copy(event)">${cmd}</div>
           <div class="card-actions">
-            <button class="btn btn-copy" onclick="copy(this)">Copiar</button>
+            <button class="btn btn-copy" onclick="copy(event)">Copiar</button>
             <button class="btn btn-code" onclick="window.open('https://github.com/teste0102/Skills/tree/main/${p.source}')">Código</button>
           </div>
         </div>
       `;
     }
 
-    function copy(el) {
-      const cmd = el.closest('.card').querySelector('.card-cmd').textContent;
+    function copy(e) {
+      const cmd = e.target.closest('.card').querySelector('.card-cmd').textContent;
       navigator.clipboard.writeText(cmd);
       showToast('✅ Copiado!');
     }
@@ -218,7 +169,6 @@
       setTimeout(() => toast.remove(), 2000);
     }
 
-    window.downloadScript = downloadScript;
     load();
   </script>
 </body>
