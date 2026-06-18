@@ -54,6 +54,8 @@
       font-size: 13px;
       font-weight: 600;
       transition: all 0.2s;
+      border: none;
+      cursor: pointer;
     }
 
     .github-btn:hover {
@@ -142,7 +144,6 @@
       font-weight: 600;
       font-size: 13px;
       cursor: pointer;
-      text-decoration: none;
       transition: all 0.2s;
     }
 
@@ -369,8 +370,8 @@
       <h2>⚡ Instalar em Segundos</h2>
       <p>Escolha sua plataforma</p>
       <div class="install-btns">
-        <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.sh" download="install.sh" class="install-btn">🐧 Linux / Mac</a>
-        <a href="https://raw.githubusercontent.com/teste0102/Skills/main/install.ps1" download="install.ps1" class="install-btn">🪟 Windows</a>
+        <button class="install-btn" onclick="downloadFile('https://raw.githubusercontent.com/teste0102/Skills/main/install.sh', 'install.sh')">🐧 Linux / Mac</button>
+        <button class="install-btn" onclick="downloadFile('https://raw.githubusercontent.com/teste0102/Skills/main/install.ps1', 'install.ps1')">🪟 Windows</button>
       </div>
     </section>
 
@@ -477,6 +478,18 @@
       const toast = document.createElement('div');
       toast.className = 'toast';
       toast.textContent = '✅ Copiado!';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2000);
+    }
+
+    function downloadFile(url, filename) {
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = '✅ Download iniciado!';
       document.body.appendChild(toast);
       setTimeout(() => toast.remove(), 2000);
     }
