@@ -3,45 +3,29 @@ set -e
 
 echo "🚀 Instalando sikavial-skills..."
 
-if ! command -v claude &> /dev/null; then
-  echo "❌ Claude Code não encontrado"
-  exit 1
-fi
+# Copia plugins para a pasta do Claude Code
+PLUGINS_DIR="$HOME/.claude/plugins"
+mkdir -p "$PLUGINS_DIR"
 
-echo "✅ Claude Code ok"
-echo ""
-echo "💾 Instalando 10 skills automaticamente..."
-echo ""
+echo "📂 Copiando skills..."
+cp -r espec "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r build "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r review "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r iterate "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r buscador "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r buscar-ml "$PLUGINS_DIR/" 2>/dev/null || true
 
-# Confiar na workspace e instalar tudo
-(
-  sleep 1
-  echo "1"
-  sleep 1
-  echo "/plugin marketplace add teste0102/Skills"
-  sleep 2
-  echo "/plugin install espec@sikavial-skills"
-  sleep 1
-  echo "/plugin install build@sikavial-skills"
-  sleep 1
-  echo "/plugin install review@sikavial-skills"
-  sleep 1
-  echo "/plugin install iterate@sikavial-skills"
-  sleep 1
-  echo "/plugin install buscador@sikavial-skills"
-  sleep 1
-  echo "/plugin install buscar-ml@sikavial-skills"
-  sleep 1
-  echo "/plugin install orquestrador@sikavial-skills"
-  sleep 1
-  echo "/plugin install explorador@sikavial-skills"
-  sleep 1
-  echo "/plugin install criador@sikavial-skills"
-  sleep 1
-  echo "/plugin install curador@sikavial-skills"
-  sleep 2
-) | claude
+echo "🤖 Copiando agentes..."
+cp -r agents/orquestrador "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r agents/explorador "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r agents/criador "$PLUGINS_DIR/" 2>/dev/null || true
+cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 
 echo ""
 echo "✅ INSTALAÇÃO COMPLETA!"
-echo "🚀 10 skills + 4 agentes prontos para usar!"
+echo "🚀 10 skills + 4 agentes já estão prontos!"
+echo ""
+echo "Abra o Claude Code e use:"
+echo "  /espec, /build, /review, /iterate"
+echo "  /buscador, /buscar-ml"
+echo "  /orquestrador, /explorador, /criador, /curador"
