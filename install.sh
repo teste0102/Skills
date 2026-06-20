@@ -23,16 +23,15 @@ cp -r agents/explorador "$PLUGINS_DIR/" 2>/dev/null || true
 cp -r agents/criador "$PLUGINS_DIR/" 2>/dev/null || true
 cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 
-echo "⚙️ Copiando configurações..."
-cp settings.json "$CLAUDE_DIR/" 2>/dev/null || true
+echo "🔧 Removendo config local (usando Claude Pro)..."
+rm -f "$CLAUDE_DIR/settings.json" 2>/dev/null || true
 
 echo ""
 echo "✅ INSTALAÇÃO 100% COMPLETA!"
 echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Abrindo Claude Code..."
+echo "Abrindo Claude Code (Claude Pro)..."
 sleep 1
 
-# Abre Claude Code - skills já estão nas pastas
 claude
 
