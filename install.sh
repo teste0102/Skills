@@ -35,31 +35,29 @@ echo "✅ INSTALAÇÃO 100% COMPLETA!"
 echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
 echo "Iniciando Claude Code..."
-sleep 1
+sleep 2
 
-# Usa HTTPS em vez de SSH
+# Instala direto das pastas locais (não precisa marketplace)
 (
   sleep 1
-  echo "/plugin marketplace add https://github.com/teste0102/Skills"
-  sleep 2
-  echo "/plugin install espec@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install build@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install review@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install iterate@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install buscador@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install buscar-ml@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install orquestrador@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install explorador@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install criador@sikavial-skills"
-  sleep 0.5
-  echo "/plugin install curador@sikavial-skills"
+  echo "/plugin install espec"
+  sleep 1
+  echo "/plugin install build"
+  sleep 1
+  echo "/plugin install review"
+  sleep 1
+  echo "/plugin install iterate"
+  sleep 1
+  echo "/plugin install buscador"
+  sleep 1
+  echo "/plugin install buscar-ml"
+  sleep 1
+  echo "/plugin install orquestrador"
+  sleep 1
+  echo "/plugin install explorador"
+  sleep 1
+  echo "/plugin install criador"
+  sleep 1
+  echo "/plugin install curador"
 ) | claude
 
