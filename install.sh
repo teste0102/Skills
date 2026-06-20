@@ -1,43 +1,44 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Instalando sikavial-skills..."
+echo "🚀 Preparando sikavial-skills..."
 
-# Verifica VS Code
+# Verifica dependências
 if ! command -v code &> /dev/null; then
   echo "❌ VS Code não encontrado"
   exit 1
 fi
-echo "✅ VS Code encontrado"
 
-# Instala extensão
-echo "📦 Instalando Claude Code Extension..."
-code --install-extension anthropic.claude-dev --force 2>/dev/null || true
-
-# Verifica Claude CLI
 if ! command -v claude &> /dev/null; then
   echo "❌ Claude Code CLI não encontrado"
   exit 1
 fi
-echo "✅ Claude Code CLI encontrado"
 
-# Cria pasta
-mkdir -p ~/.claude/plugins
+echo "✅ Dependências ok"
+echo ""
+echo "Abrindo Claude Code..."
+sleep 2
+
+# Abre Claude Code
+claude &
+
+sleep 3
 
 echo ""
-echo "💾 Instalando 10 skills..."
-
-# Instala cada skill SEM menu interativo
-for skill in espec build review iterate buscador buscar-ml orquestrador explorador criador curador; do
-  echo "  ⚙️  $skill..."
-  timeout 10 bash -c "echo 'n' | claude /plugin install $skill@sikavial-skills" 2>/dev/null || true
-  sleep 0.3
-done
-
+echo "════════════════════════════════════════════════════════════"
+echo "Cole ESTES comandos um por um no Claude Code:"
+echo "════════════════════════════════════════════════════════════"
 echo ""
-echo "✅ INSTALAÇÃO COMPLETA!"
+echo "/plugin marketplace add teste0102/Skills"
+echo "/plugin install espec@sikavial-skills"
+echo "/plugin install build@sikavial-skills"
+echo "/plugin install review@sikavial-skills"
+echo "/plugin install iterate@sikavial-skills"
+echo "/plugin install buscador@sikavial-skills"
+echo "/plugin install buscar-ml@sikavial-skills"
+echo "/plugin install orquestrador@sikavial-skills"
+echo "/plugin install explorador@sikavial-skills"
+echo "/plugin install criador@sikavial-skills"
+echo "/plugin install curador@sikavial-skills"
 echo ""
-echo "Use no Claude Code:"
-echo "  /espec, /build, /review, /iterate"
-echo "  /buscador, /buscar-ml"
-echo "  /orquestrador, /explorador, /criador, /curador"
+echo "✅ Pronto! Use os 10 skills acima."
