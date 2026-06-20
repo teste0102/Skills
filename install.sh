@@ -26,61 +26,13 @@ cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 echo "⚙️ Copiando configurações..."
 cp settings.json "$CLAUDE_DIR/" 2>/dev/null || true
 
-echo "🔒 Confiando na workspace..."
-mkdir -p "$CLAUDE_DIR/trust"
-touch "$CLAUDE_DIR/trust/home_mknexaro" 2>/dev/null || true
-
 echo ""
 echo "✅ INSTALAÇÃO 100% COMPLETA!"
 echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Iniciando Claude Code..."
-sleep 2
+echo "Abrindo Claude Code..."
+sleep 1
 
-# Instala cada skill com ENTER para aceitar menu
-(
-  sleep 2
-  echo "/plugin install espec"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install build"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install review"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install iterate"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install buscador"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install buscar-ml"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install orquestrador"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install explorador"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install criador"
-  sleep 2
-  printf "\n"
-  sleep 2
-  echo "/plugin install curador"
-  sleep 2
-  printf "\n"
-) | claude
-
-echo ""
-echo "✨ TUDO PRONTO! Use os 10 skills no Claude Code!"
+# Abre Claude Code - skills já estão nas pastas
+claude
 
