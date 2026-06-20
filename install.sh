@@ -26,22 +26,22 @@ cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 echo "⚙️ Copiando configurações..."
 cp settings.json "$CLAUDE_DIR/" 2>/dev/null || true
 
-echo "🔒 Confiando na workspace automaticamente..."
+echo "🔒 Confiando na workspace..."
 mkdir -p "$CLAUDE_DIR/trust"
 touch "$CLAUDE_DIR/trust/home_mknexaro" 2>/dev/null || true
 
 echo ""
 echo "✅ INSTALAÇÃO 100% COMPLETA!"
-echo "🚀 10 skills + 4 agentes instalados!"
+echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Iniciando Claude Code com marketplace..."
+echo "Iniciando Claude Code..."
 sleep 1
 
-# Abre Claude Code e instala tudo SEM interação
+# Usa HTTPS em vez de SSH
 (
   sleep 1
-  echo "/plugin marketplace add teste0102/Skills"
-  sleep 1
+  echo "/plugin marketplace add https://github.com/teste0102/Skills"
+  sleep 2
   echo "/plugin install espec@sikavial-skills"
   sleep 0.5
   echo "/plugin install build@sikavial-skills"
