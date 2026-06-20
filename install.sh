@@ -27,5 +27,5 @@ echo ""
 echo "Iniciando Claude Code..."
 sleep 1
 
-# Abre Claude Code e fica aberto (não background)
-claude
+# Responde automaticamente e abre Claude Code
+echo "1" | claude
