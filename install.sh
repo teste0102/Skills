@@ -3,7 +3,6 @@ set -e
 
 echo "🚀 Instalando sikavial-skills..."
 
-# Copia plugins para a pasta do Claude Code
 PLUGINS_DIR="$HOME/.claude/plugins"
 mkdir -p "$PLUGINS_DIR"
 
@@ -23,9 +22,12 @@ cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 
 echo ""
 echo "✅ INSTALAÇÃO COMPLETA!"
-echo "🚀 10 skills + 4 agentes já estão prontos!"
+echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Abra o Claude Code e use:"
-echo "  /espec, /build, /review, /iterate"
-echo "  /buscador, /buscar-ml"
-echo "  /orquestrador, /explorador, /criador, /curador"
+echo "Abrindo Claude Code..."
+sleep 2
+
+# Abre Claude Code automaticamente
+claude &
+
+echo "✨ Pronto! Use: /espec /build /review /iterate /buscador /buscar-ml /orquestrador /explorador /criador /curador"
