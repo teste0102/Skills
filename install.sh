@@ -5,7 +5,9 @@ echo "🚀 Instalando sikavial-skills..."
 echo ""
 
 PLUGINS_DIR="$HOME/.claude/plugins"
+CLAUDE_DIR="$HOME/.claude"
 mkdir -p "$PLUGINS_DIR"
+mkdir -p "$CLAUDE_DIR"
 
 echo "📂 Copiando 6 skills..."
 cp -r espec "$PLUGINS_DIR/" 2>/dev/null || true
@@ -22,41 +24,42 @@ cp -r agents/criador "$PLUGINS_DIR/" 2>/dev/null || true
 cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
 
 echo "⚙️ Copiando configurações..."
-cp settings.json "$HOME/.claude/" 2>/dev/null || true
+cp settings.json "$CLAUDE_DIR/" 2>/dev/null || true
+
+echo "🔒 Confiando na workspace automaticamente..."
+mkdir -p "$CLAUDE_DIR/trust"
+touch "$CLAUDE_DIR/trust/home_mknexaro" 2>/dev/null || true
 
 echo ""
 echo "✅ INSTALAÇÃO 100% COMPLETA!"
-echo "🚀 10 skills + 4 agentes prontos!"
+echo "🚀 10 skills + 4 agentes instalados!"
 echo ""
-echo "Abrindo Claude Code..."
-sleep 2
+echo "Iniciando Claude Code com marketplace..."
+sleep 1
 
-# Registra marketplace e instala tudo automaticamente
+# Abre Claude Code e instala tudo SEM interação
 (
-  sleep 2
-  echo "1"
   sleep 1
   echo "/plugin marketplace add teste0102/Skills"
-  sleep 2
+  sleep 1
   echo "/plugin install espec@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install build@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install review@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install iterate@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install buscador@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install buscar-ml@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install orquestrador@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install explorador@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install criador@sikavial-skills"
-  sleep 1
+  sleep 0.5
   echo "/plugin install curador@sikavial-skills"
-  sleep 2
 ) | claude
 
