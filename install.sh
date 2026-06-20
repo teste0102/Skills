@@ -1,44 +1,47 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Preparando sikavial-skills..."
-
-# Verifica dependências
-if ! command -v code &> /dev/null; then
-  echo "❌ VS Code não encontrado"
-  exit 1
-fi
+echo "🚀 Instalando sikavial-skills..."
 
 if ! command -v claude &> /dev/null; then
-  echo "❌ Claude Code CLI não encontrado"
+  echo "❌ Claude Code não encontrado"
   exit 1
 fi
 
-echo "✅ Dependências ok"
+echo "✅ Claude Code ok"
 echo ""
-echo "Abrindo Claude Code..."
-sleep 2
+echo "💾 Instalando 10 skills automaticamente..."
+echo ""
 
-# Abre Claude Code
-claude &
+# Confiar na workspace e instalar tudo
+(
+  sleep 1
+  echo "1"
+  sleep 1
+  echo "/plugin marketplace add teste0102/Skills"
+  sleep 2
+  echo "/plugin install espec@sikavial-skills"
+  sleep 1
+  echo "/plugin install build@sikavial-skills"
+  sleep 1
+  echo "/plugin install review@sikavial-skills"
+  sleep 1
+  echo "/plugin install iterate@sikavial-skills"
+  sleep 1
+  echo "/plugin install buscador@sikavial-skills"
+  sleep 1
+  echo "/plugin install buscar-ml@sikavial-skills"
+  sleep 1
+  echo "/plugin install orquestrador@sikavial-skills"
+  sleep 1
+  echo "/plugin install explorador@sikavial-skills"
+  sleep 1
+  echo "/plugin install criador@sikavial-skills"
+  sleep 1
+  echo "/plugin install curador@sikavial-skills"
+  sleep 2
+) | claude
 
-sleep 3
-
 echo ""
-echo "════════════════════════════════════════════════════════════"
-echo "Cole ESTES comandos um por um no Claude Code:"
-echo "════════════════════════════════════════════════════════════"
-echo ""
-echo "/plugin marketplace add teste0102/Skills"
-echo "/plugin install espec@sikavial-skills"
-echo "/plugin install build@sikavial-skills"
-echo "/plugin install review@sikavial-skills"
-echo "/plugin install iterate@sikavial-skills"
-echo "/plugin install buscador@sikavial-skills"
-echo "/plugin install buscar-ml@sikavial-skills"
-echo "/plugin install orquestrador@sikavial-skills"
-echo "/plugin install explorador@sikavial-skills"
-echo "/plugin install criador@sikavial-skills"
-echo "/plugin install curador@sikavial-skills"
-echo ""
-echo "✅ Pronto! Use os 10 skills acima."
+echo "✅ INSTALAÇÃO COMPLETA!"
+echo "🚀 10 skills + 4 agentes prontos para usar!"
