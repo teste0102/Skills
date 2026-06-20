@@ -24,13 +24,8 @@ echo ""
 echo "✅ INSTALAÇÃO COMPLETA!"
 echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Abrindo Claude Code..."
-sleep 2
+echo "Iniciando Claude Code..."
+sleep 1
 
-# Responde automaticamente à pergunta de confiança
-(
-  sleep 1
-  echo "1"
-) | claude
-
-echo "✨ Pronto! Use: /espec /build /review /iterate /buscador /buscar-ml /orquestrador /explorador /criador /curador"
+# Abre Claude Code e fica aberto (não background)
+claude
