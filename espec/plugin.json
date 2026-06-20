@@ -1,0 +1,9 @@
+{
+  "name": "espec",
+  "version": "0.1.0",
+  "type": "skill",
+  "description": "Interview-driven specification writer",
+  "author": {
+    "name": "Sikavial"
+  }
+}
