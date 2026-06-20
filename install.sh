@@ -37,27 +37,47 @@ echo ""
 echo "Iniciando Claude Code..."
 sleep 2
 
-# Instala direto das pastas locais (não precisa marketplace)
+# Instala com Enter para aceitar primeira opção
 (
   sleep 1
   echo "/plugin install espec"
   sleep 1
+  echo ""
+  sleep 1
   echo "/plugin install build"
+  sleep 1
+  echo ""
   sleep 1
   echo "/plugin install review"
   sleep 1
+  echo ""
+  sleep 1
   echo "/plugin install iterate"
+  sleep 1
+  echo ""
   sleep 1
   echo "/plugin install buscador"
   sleep 1
+  echo ""
+  sleep 1
   echo "/plugin install buscar-ml"
+  sleep 1
+  echo ""
   sleep 1
   echo "/plugin install orquestrador"
   sleep 1
+  echo ""
+  sleep 1
   echo "/plugin install explorador"
+  sleep 1
+  echo ""
   sleep 1
   echo "/plugin install criador"
   sleep 1
+  echo ""
+  sleep 1
   echo "/plugin install curador"
+  sleep 1
+  echo ""
 ) | claude
 
