@@ -1,125 +1,242 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>sikavial-skills</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sikavial-skills • Claude Code Skills</title>
 <style>
-* { margin: 0; padding: 0; }
-html, body { 
-  background-color: #1a1a1a !important;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #1a1a2e;
   color: #e0e0e0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
 }
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-.box { background: #2d2d2d; border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid #404040; }
-.header { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 24px; font-weight: bold; color: #00ff88; }
-.btn { padding: 12px 24px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; background: #00ff88; color: #1a1a1a; }
-.btn:hover { background: #00dd77; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-.card { background: #2d2d2d; padding: 20px; border-radius: 8px; border: 1px solid #404040; }
-.card-cmd { background: #1a1a1a; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; margin: 10px 0; cursor: pointer; border: 1px solid #404040; color: #00ff88; user-select: all; }
-h2 { margin-top: 30px; margin-bottom: 20px; color: #00ff88; }
-.badge { display: inline-block; background: #404040; color: #00ff88; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; margin-bottom: 10px; }
-.badge.agent { background: #404040; color: #ff6b6b; }
-.install-cmd { background: #1a1a1a; border: 2px solid #00ff88; border-radius: 8px; padding: 20px; margin: 20px 0; }
-.install-cmd-text { background: #0a0a0a; padding: 15px; border-radius: 4px; font-family: monospace; color: #00ff88; font-size: 14px; margin: 10px 0; word-break: break-all; user-select: all; }
-.config-box { background: #0a0a0a; border: 2px solid #ff6b6b; border-radius: 8px; padding: 20px; margin: 20px 0; }
-.config-box h3 { color: #ff6b6b; margin-bottom: 10px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.header {
+  background: #16213e;
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo { font-size: 22px; font-weight: bold; color: #00ff88; }
+.gh-btn {
+  background: #00ff88;
+  color: #1a1a2e;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+.gh-btn:hover { background: #00dd77; }
+.hero {
+  background: linear-gradient(135deg, #16213e, #0f3460);
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hero h1 { font-size: 28px; color: #00ff88; margin-bottom: 8px; }
+.hero p { color: #aaa; font-size: 14px; }
+.stats { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
+.stat-num { font-size: 28px; font-weight: bold; color: #00ff88; }
+.stat-label { font-size: 12px; color: #888; }
+.install-box {
+  background: #0a2647;
+  border: 2px solid #00ff88;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+.install-box h2 { color: #00ff88; font-size: 20px; margin-bottom: 15px; }
+.cmd-box {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff88;
+  cursor: pointer;
+  user-select: all;
+  margin: 10px 0;
+  word-break: break-all;
+}
+.cmd-box:hover { border-color: #00ff88; background: #0a1929; }
+.copy-btn {
+  background: #00ff88;
+  color: #1a1a2e;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.copy-btn:hover { background: #00dd77; }
+.info-box {
+  background: #1a1a2e;
+  border: 1px solid #ffd700;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.info-box h3 { color: #ffd700; margin-bottom: 10px; }
+.info-box p { font-size: 13px; line-height: 1.6; color: #ccc; }
+.use-box {
+  background: #16213e;
+  border: 1px solid #2a2a4a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.use-box h3 { color: #00ff88; margin-bottom: 15px; }
+.use-item {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.use-prompt { color: #e6db74; font-family: monospace; font-size: 13px; flex: 1; }
+.use-arrow { color: #00ff88; font-size: 16px; }
+.use-skill { color: #ff6b6b; font-family: monospace; font-size: 13px; }
+.section-title { color: #00ff88; font-size: 18px; margin: 25px 0 15px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.card {
+  background: #16213e;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: #00ff88; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.badge-skill { background: #0a2647; color: #00ff88; }
+.badge-agent { background: #2a1a1a; color: #ff6b6b; }
+.card h3 { font-size: 16px; margin-bottom: 6px; }
+.card p { color: #888; font-size: 12px; line-height: 1.5; }
+footer { text-align: center; color: #555; padding: 30px; font-size: 12px; }
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .stats { flex-direction: column; gap: 10px; }
+  .header { flex-direction: column; gap: 10px; }
+  .use-item { flex-direction: column; gap: 5px; }
+}
 </style>
 </head>
 <body>
-
 <div class="container">
-
-<div class="box header">
+<div class="header">
   <div class="logo">⚡ sikavial-skills</div>
-  <a href="https://github.com/teste0102/Skills" class="btn">📦 GitHub</a>
+  <a href="https://github.com/teste0102/Skills" class="gh-btn">📦 GitHub</a>
 </div>
-
-<div class="box">
-  <h1 style="color: #00ff88;">Claude Code Skills</h1>
-  <p>Spec-driven development com 10 skills e 4 agentes</p>
+<div class="hero">
+  <h1>Claude Code Skills</h1>
+  <p>Spec-driven development • Skills carregadas automaticamente</p>
+  <div class="stats">
+    <div><div class="stat-num">6</div><div class="stat-label">Skills</div></div>
+    <div><div class="stat-num">4</div><div class="stat-label">Agentes</div></div>
+    <div><div class="stat-num">10</div><div class="stat-label">Total</div></div>
+  </div>
 </div>
-
-<div class="install-cmd">
-  <h2 style="margin-top: 0;">⚡ Instalar em Segundos</h2>
-  <p>Cole ESTE comando no terminal:</p>
-  
-  <p style="font-weight: bold; color: #00ff88; margin: 15px 0;">🐧 Linux / Mac / Windows (Git Bash):</p>
-  <div class="install-cmd-text" onclick="copiar(this)">bash <(curl -s https://raw.githubusercontent.com/teste0102/Skills/main/install.sh)</div>
-  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[0])">📋 Copiar</button>
+<div class="install-box">
+  <h2>⚡ Instalar em 1 Comando</h2>
+  <p style="margin-bottom: 10px;">Cole no terminal e pressione Enter:</p>
+  <div class="cmd-box" id="install-cmd" onclick="copiarTexto()">bash &lt;(curl -s https://raw.githubusercontent.com/teste0102/Skills/main/install.sh)</div>
+  <button class="copy-btn" onclick="copiarTexto()">📋 Copiar Comando</button>
 </div>
-
-<div class="config-box">
-  <h3>⚙️ Configurar para Modelo LOCAL (Ollama - Grátis)</h3>
-  <p>Copie o arquivo de configuração do Git:</p>
-  <div class="install-cmd-text" onclick="copiar(this)">curl -o ~/.claude/settings.json https://raw.githubusercontent.com/teste0102/Skills/main/settings.json</div>
-  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[1])">📋 Copiar Comando</button>
-  
-  <p style="margin-top: 15px; margin-bottom: 10px;">Ou edite manualmente:</p>
-  <div class="install-cmd-text" onclick="copiar(this">{
-  "model": "ollama:qwen3:8b"
-}</div>
-  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[2])">📋 Copiar Config</button>
-  
-  <p style="margin-top: 15px; font-size: 12px; color: #ffb0b0;">
-    💡 Modelos disponíveis: qwen3:8b, qwen2.5-coder:7b, deepseek-r1:8b, llama2, mistral
+<div class="info-box">
+  <h3>💡 Como Funciona?</h3>
+  <p>
+    Skills do Claude Code são <strong>carregadas automaticamente</strong> quando Claude detecta que são relevantes para sua tarefa.
+    Você <strong>NÃO precisa digitar comandos especiais</strong>. Apenas descreva o que quer e Claude usará a skill certa!
   </p>
 </div>
-
-<h2>💾 10 Skills & Agentes</h2>
-
-<h3 style="color: #00ff88; margin-top: 20px;">Skills</h3>
-<div class="grid" id="skills"></div>
-
-<h3 style="color: #ff6b6b; margin-top: 20px;">Agentes</h3>
-<div class="grid" id="agents"></div>
-
+<div class="use-box">
+  <h3>📖 Como Usar (Exemplos)</h3>
+  <div class="use-item">
+    <span class="use-prompt">"escreva uma spec para um app de tarefas"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">espec</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"construa conforme a spec"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">build</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"verifique se está conforme a spec"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">review</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"busca patinete no mercado livre"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">buscar-ml</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"pesquisa sobre inteligência artificial"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">buscador</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"analisa meu projeto e recomenda skills"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">explorador</span>
+  </div>
+  <div class="use-item">
+    <span class="use-prompt">"cria uma skill para deploy automático"</span>
+    <span class="use-arrow">→</span>
+    <span class="use-skill">criador</span>
+  </div>
 </div>
-
+<h2 class="section-title">💾 Skills</h2>
+<div class="grid" id="skills"></div>
+<h2 class="section-title">🤖 Agentes</h2>
+<div class="grid" id="agents"></div>
+</div>
+<footer>
+  <p>© 2026 Sikavial • <a href="https://github.com/teste0102/Skills" style="color: #00ff88;">github.com/teste0102/Skills</a></p>
+</footer>
 <script>
-function copiar(el) {
-  const cmd = el.textContent;
-  navigator.clipboard.writeText(cmd);
-  alert('✅ Copiado!');
+function copiarTexto() {
+  navigator.clipboard.writeText('bash <(curl -s https://raw.githubusercontent.com/teste0102/Skills/main/install.sh)');
+  alert('✅ Copiado!\n\nCole no terminal e pressione Enter!');
 }
-
 async function load() {
   try {
-    const res = await fetch('https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json');
-    const data = await res.json();
-    
-    const skills = data.plugins.filter(p => !p.type || p.type !== 'agent');
-    const agents = data.plugins.filter(p => p.type === 'agent');
-    
-    let skillsHtml = skills.map(p => `
-      <div class="card">
-        <div class="badge">SKILL</div>
-        <h3 style="color: #00ff88;">/${p.name}</h3>
-        <p>${p.description}</p>
-      </div>
-    `).join('');
-    
-    let agentsHtml = agents.map(p => `
-      <div class="card">
-        <div class="badge agent">AGENTE</div>
-        <h3 style="color: #ff6b6b;">/${p.name}</h3>
-        <p>${p.description}</p>
-      </div>
-    `).join('');
-    
-    document.getElementById('skills').innerHTML = skillsHtml || '<p>Nenhuma skill</p>';
-    document.getElementById('agents').innerHTML = agentsHtml || '<p>Nenhum agente</p>';
-    
-  } catch (e) {
-    console.error(e);
-  }
+    var res = await fetch('https://raw.githubusercontent.com/teste0102/Skills/main/.claude-plugin/marketplace.json');
+    var data = await res.json();
+    var skills = data.plugins.filter(function(p) { return !p.type || p.type !== 'agent'; });
+    var agents = data.plugins.filter(function(p) { return p.type === 'agent'; });
+    document.getElementById('skills').innerHTML = skills.map(function(p) {
+      return '<div class="card"><div class="badge badge-skill">SKILL</div><h3 style="color:#00ff88;">' + p.name + '</h3><p>' + p.description + '</p></div>';
+    }).join('');
+    document.getElementById('agents').innerHTML = agents.map(function(p) {
+      return '<div class="card"><div class="badge badge-agent">AGENTE</div><h3 style="color:#ff6b6b;">' + p.name + '</h3><p>' + p.description + '</p></div>';
+    }).join('');
+  } catch (e) { console.error(e); }
 }
-
 load();
 </script>
-
 </body>
 </html>

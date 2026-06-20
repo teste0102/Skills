@@ -1,52 +1,72 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Instalando sikavial-skills..."
+echo ""
+echo "╔══════════════════════════════════════════╗"
+echo "║   sikavial-skills • Instalador v2.0      ║"
+echo "╚══════════════════════════════════════════╝"
 echo ""
 
-CACHE_DIR="$HOME/.claude/plugins/cache/sikavial-skills"
-CLAUDE_DIR="$HOME/.claude"
-mkdir -p "$CACHE_DIR"
+# Verifica Claude Code CLI
+if ! command -v claude &> /dev/null; then
+  echo "❌ Claude Code CLI não encontrado!"
+  echo "   Instale em: https://docs.anthropic.com/en/docs/claude-code"
+  exit 1
+fi
+echo "✅ Claude Code CLI encontrado"
 
-echo "📂 Copiando 6 skills..."
+# Cria diretório de skills
+SKILLS_DIR="$HOME/.claude/skills"
+mkdir -p "$SKILLS_DIR"
+
+# Clona o repositório temporariamente
+TEMP_DIR=$(mktemp -d)
+echo "📥 Baixando skills..."
+git clone --quiet https://github.com/teste0102/Skills.git "$TEMP_DIR" 2>/dev/null
+
+# Copia skills para ~/.claude/skills/
+echo "📂 Instalando 6 skills..."
 for skill in espec build review iterate buscador buscar-ml; do
-  mkdir -p "$CACHE_DIR/$skill/0.1.0"
-  cp -r "$skill"/* "$CACHE_DIR/$skill/0.1.0/" 2>/dev/null || true
+  rm -rf "$SKILLS_DIR/$skill" 2>/dev/null
+  cp -r "$TEMP_DIR/$skill/skills/$skill" "$SKILLS_DIR/$skill" 2>/dev/null || true
+  echo "   ✓ $skill"
 done
 
-echo "🤖 Copiando 4 agentes..."
+echo "🤖 Instalando 4 agentes..."
 for agent in orquestrador explorador criador curador; do
-  mkdir -p "$CACHE_DIR/$agent/0.1.0"
-  cp -r "agents/$agent"/* "$CACHE_DIR/$agent/0.1.0/" 2>/dev/null || true
+  rm -rf "$SKILLS_DIR/$agent" 2>/dev/null
+  cp -r "$TEMP_DIR/agents/$agent/skills/$agent" "$SKILLS_DIR/$agent" 2>/dev/null || true
+  echo "   ✓ $agent"
 done
 
-echo "📝 Registrando 10 plugins..."
-NOW=$(date -u +"%Y-%m-%dT%H:%M:%S.000Z")
-
-cat > "$CLAUDE_DIR/plugins/installed_plugins.json" << EOF
-{
-  "version": 2,
-  "plugins": {
-    "espec@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/espec/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "build@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/build/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "review@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/review/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "iterate@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/iterate/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "buscador@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/buscador/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "buscar-ml@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/buscar-ml/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "orquestrador@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/orquestrador/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "explorador@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/explorador/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "criador@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/criador/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}],
-    "curador@sikavial-skills": [{"scope": "user", "installPath": "$CACHE_DIR/curador/0.1.0", "version": "0.1.0", "installedAt": "$NOW", "lastUpdated": "$NOW"}]
-  }
-}
-EOF
+# Limpa temporário
+rm -rf "$TEMP_DIR"
 
 echo ""
-echo "✅ INSTALAÇÃO 100% COMPLETA!"
-echo "🚀 10 skills + 4 agentes registrados!"
+echo "╔══════════════════════════════════════════╗"
+echo "║   ✅ INSTALAÇÃO COMPLETA!                ║"
+echo "║                                          ║"
+echo "║   10 skills instaladas em:               ║"
+echo "║   ~/.claude/skills/                      ║"
+echo "║                                          ║"
+echo "║   COMO USAR:                             ║"
+echo "║   Abra o Claude Code e peça:             ║"
+echo "║                                          ║"
+echo "║   • 'escreva uma spec para...'           ║"
+echo "║     → usa skill espec                    ║"
+echo "║   • 'construa conforme a spec'           ║"
+echo "║     → usa skill build                    ║"
+echo "║   • 'verifique se está conforme a spec'  ║"
+echo "║     → usa skill review                   ║"
+echo "║   • 'busca patinete no mercado livre'    ║"
+echo "║     → usa skill buscar-ml                ║"
+echo "║   • 'busca informações sobre...'         ║"
+echo "║     → usa skill buscador                 ║"
+echo "║                                          ║"
+echo "║   Skills são carregadas AUTOMATICAMENTE  ║"
+echo "║   quando Claude detecta que são úteis.   ║"
+echo "╚══════════════════════════════════════════╝"
 echo ""
 echo "Abrindo Claude Code..."
-sleep 1
-
+sleep 2
 claude
-
