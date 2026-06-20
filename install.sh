@@ -10,27 +10,28 @@ mkdir -p "$PLUGINS_DIR"
 mkdir -p "$CLAUDE_DIR"
 
 echo "📂 Copiando 6 skills..."
-cp -r espec "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r build "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r review "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r iterate "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r buscador "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r buscar-ml "$PLUGINS_DIR/" 2>/dev/null || true
+for skill in espec build review iterate buscador buscar-ml; do
+  cp -r "$skill" "$PLUGINS_DIR/" 2>/dev/null || true
+  # Move plugin.json para raiz
+  if [ -f "$PLUGINS_DIR/$skill/.claude-plugin/plugin.json" ]; then
+    cp "$PLUGINS_DIR/$skill/.claude-plugin/plugin.json" "$PLUGINS_DIR/$skill/"
+  fi
+done
 
 echo "🤖 Copiando 4 agentes..."
-cp -r agents/orquestrador "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r agents/explorador "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r agents/criador "$PLUGINS_DIR/" 2>/dev/null || true
-cp -r agents/curador "$PLUGINS_DIR/" 2>/dev/null || true
-
-echo "🔧 Removendo config local (usando Claude Pro)..."
-rm -f "$CLAUDE_DIR/settings.json" 2>/dev/null || true
+for agent in orquestrador explorador criador curador; do
+  cp -r "agents/$agent" "$PLUGINS_DIR/" 2>/dev/null || true
+  # Move plugin.json para raiz
+  if [ -f "$PLUGINS_DIR/$agent/.claude-plugin/plugin.json" ]; then
+    cp "$PLUGINS_DIR/$agent/.claude-plugin/plugin.json" "$PLUGINS_DIR/$agent/"
+  fi
+done
 
 echo ""
 echo "✅ INSTALAÇÃO 100% COMPLETA!"
 echo "🚀 10 skills + 4 agentes prontos!"
 echo ""
-echo "Abrindo Claude Code (Claude Pro)..."
+echo "Abrindo Claude Code..."
 sleep 1
 
 claude
