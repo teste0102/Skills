@@ -10,17 +10,18 @@ Quando o usuário pedir para buscar produtos no Mercado Livre:
 ## Processo
 
 1. **Use WebSearch** para buscar:
-2. **Extraia dos resultados:**
-   - Título do produto
-   - Preço (R$)
-   - Link direto
-   - Condição (novo/usado)
+   - Query: `<termo> mercado livre preço`
+
+2. **Use WebFetch** nos links do mercadolivre.com.br encontrados para extrair preços
 
 3. **Apresente no formato:**
 
+| # | Produto | Preço | Link |
+|---|---------|-------|------|
+| 1 | Título | R$ X | [Ver](url) |
 
 ## Regras
-- Sempre use WebSearch com `site:mercadolivre.com.br`
+- Busque com WebSearch e depois use WebFetch nos links do ML
 - Máximo 5 resultados
-- Ordene por menor preço quando possível
 - Apresente em português
+- Se não conseguir preço, mostre o link para o usuário acessar
