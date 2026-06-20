@@ -20,13 +20,13 @@ html, body {
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
 .card { background: #2d2d2d; padding: 20px; border-radius: 8px; border: 1px solid #404040; }
 .card-cmd { background: #1a1a1a; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; margin: 10px 0; cursor: pointer; border: 1px solid #404040; color: #00ff88; user-select: all; }
-.card-cmd:hover { border-color: #00ff88; }
 h2 { margin-top: 30px; margin-bottom: 20px; color: #00ff88; }
 .badge { display: inline-block; background: #404040; color: #00ff88; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: bold; margin-bottom: 10px; }
 .badge.agent { background: #404040; color: #ff6b6b; }
 .install-cmd { background: #1a1a1a; border: 2px solid #00ff88; border-radius: 8px; padding: 20px; margin: 20px 0; }
 .install-cmd-text { background: #0a0a0a; padding: 15px; border-radius: 4px; font-family: monospace; color: #00ff88; font-size: 14px; margin: 10px 0; word-break: break-all; user-select: all; }
-.warning { background: #402020; border: 1px solid #ff6b6b; border-radius: 8px; padding: 15px; margin: 20px 0; color: #ffb0b0; }
+.config-box { background: #0a0a0a; border: 2px solid #ff6b6b; border-radius: 8px; padding: 20px; margin: 20px 0; }
+.config-box h3 { color: #ff6b6b; margin-bottom: 10px; }
 </style>
 </head>
 <body>
@@ -45,23 +45,31 @@ h2 { margin-top: 30px; margin-bottom: 20px; color: #00ff88; }
 
 <div class="install-cmd">
   <h2 style="margin-top: 0;">⚡ Instalar em Segundos</h2>
-  <p>Cole ESTE comando no terminal e pressione Enter:</p>
+  <p>Cole ESTE comando no terminal:</p>
   
-  <p style="font-weight: bold; color: #00ff88; margin: 15px 0;">🐧 Linux / Mac:</p>
+  <p style="font-weight: bold; color: #00ff88; margin: 15px 0;">🐧 Linux / Mac / Windows (Git Bash):</p>
   <div class="install-cmd-text" onclick="copiar(this)">bash <(curl -s https://raw.githubusercontent.com/teste0102/Skills/main/install.sh)</div>
   <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[0])">📋 Copiar</button>
+</div>
+
+<div class="config-box">
+  <h3>⚙️ Configurar para Modelo LOCAL (Ollama - Grátis)</h3>
+  <p>Copie o arquivo de configuração do Git:</p>
+  <div class="install-cmd-text" onclick="copiar(this)">curl -o ~/.claude/settings.json https://raw.githubusercontent.com/teste0102/Skills/main/settings.json</div>
+  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[1])">📋 Copiar Comando</button>
   
-  <p style="font-weight: bold; color: #00ff88; margin: 20px 0 15px 0;">🪟 Windows (PowerShell):</p>
-  <div class="install-cmd-text" onclick="copiar(this)">powershell -NoProfile -ExecutionPolicy Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/teste0102/Skills/main/install.ps1')"</div>
-  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[1])">📋 Copiar</button>
+  <p style="margin-top: 15px; margin-bottom: 10px;">Ou edite manualmente:</p>
+  <div class="install-cmd-text" onclick="copiar(this">{
+  "model": "ollama:qwen3:8b"
+}</div>
+  <button class="btn" onclick="copiar(document.querySelectorAll('.install-cmd-text')[2])">📋 Copiar Config</button>
   
-  <div class="warning">
-    ⚠️ <strong>Importante:</strong> Cole o comando acima no terminal e pressione Enter. O script vai instalar tudo automaticamente!
-  </div>
+  <p style="margin-top: 15px; font-size: 12px; color: #ffb0b0;">
+    💡 Modelos disponíveis: qwen3:8b, qwen2.5-coder:7b, deepseek-r1:8b, llama2, mistral
+  </p>
 </div>
 
 <h2>💾 10 Skills & Agentes</h2>
-<p>Após instalar, use os comandos abaixo no Claude Code:</p>
 
 <h3 style="color: #00ff88; margin-top: 20px;">Skills</h3>
 <div class="grid" id="skills"></div>
@@ -75,7 +83,7 @@ h2 { margin-top: 30px; margin-bottom: 20px; color: #00ff88; }
 function copiar(el) {
   const cmd = el.textContent;
   navigator.clipboard.writeText(cmd);
-  alert('✅ Copiado!\n\nCole no seu terminal e pressione Enter!');
+  alert('✅ Copiado!');
 }
 
 async function load() {
@@ -91,7 +99,6 @@ async function load() {
         <div class="badge">SKILL</div>
         <h3 style="color: #00ff88;">/${p.name}</h3>
         <p>${p.description}</p>
-        <div class="card-cmd" onclick="copiar(this)">/espec</div>
       </div>
     `).join('');
     
@@ -100,7 +107,6 @@ async function load() {
         <div class="badge agent">AGENTE</div>
         <h3 style="color: #ff6b6b;">/${p.name}</h3>
         <p>${p.description}</p>
-        <div class="card-cmd" onclick="copiar(this)">/${p.name}</div>
       </div>
     `).join('');
     
