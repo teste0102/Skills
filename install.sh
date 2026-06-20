@@ -27,7 +27,10 @@ echo ""
 echo "Abrindo Claude Code..."
 sleep 2
 
-# Abre Claude Code automaticamente
-claude &
+# Responde automaticamente à pergunta de confiança
+(
+  sleep 1
+  echo "1"
+) | claude
 
 echo "✨ Pronto! Use: /espec /build /review /iterate /buscador /buscar-ml /orquestrador /explorador /criador /curador"
