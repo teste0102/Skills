@@ -1,2 +1,3 @@
-2026/06/21-00:30:23.868 2e5db Creating DB /home/mknexaro/.claude/skills/buscar-shopee/C:\ShopeeBotProfile/Default/Sync Data/LevelDB since it was missing.
-2026/06/21-00:30:23.877 2e5db Reusing MANIFEST /home/mknexaro/.claude/skills/buscar-shopee/C:\ShopeeBotProfile/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/06/21-01:11:29.088 3057e Reusing MANIFEST /home/mknexaro/.claude/skills/buscar-shopee/C:\ShopeeBotProfile/Default/Sync Data/LevelDB/MANIFEST-000001
+2026/06/21-01:11:29.089 3057e Recovering log #3
+2026/06/21-01:11:29.089 3057e Reusing old log /home/mknexaro/.claude/skills/buscar-shopee/C:\ShopeeBotProfile/Default/Sync Data/LevelDB/000003.log 
