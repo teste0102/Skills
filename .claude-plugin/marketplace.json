@@ -68,6 +68,12 @@
       "source": "./buscar-ml",
       "description": "Busca produtos no Mercado Livre via API pública e retorna lista ordenada por menor preço.",
       "version": "0.1.0"
+    },
+    {
+      "name": "buscar-shopee",
+      "source": "./buscar-shopee",
+      "description": "Busca produtos na Shopee com preços via scraper Selenium",
+      "version": "0.1.0"
     }
   ]
 }
